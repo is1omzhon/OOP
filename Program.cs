@@ -11,6 +11,7 @@ opel.ShowInfo();
 opel.Drive(100);
 opel.Refuel(15);
 
+
 Console.WriteLine();
 
 var lada = new Car()
@@ -18,10 +19,10 @@ var lada = new Car()
     Brand = "Lada",
     Model = "Largus",
     Year = 2020,
-    FuelLevel = 0
+    FuelLevel = 10
 };
 
 lada.ShowInfo();
 lada.Refuel(105);
-
-
+lada.Drive(300);
+lada.ShowInfo();

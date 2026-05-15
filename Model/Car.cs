@@ -19,25 +19,34 @@ namespace Model
             int countFuel = FuelLevel;
             int countDistance = distance;
 
-            for (int i = 0; i <= FuelLevel; i++)
+            for (int i = 0; i < FuelLevel; i++)  
             {
                 if (countFuel <= 0)
                 {
                     Console.WriteLine($"Not enough fuel. Qolgan masofa: {countDistance}km ");
+                    FuelLevel = countFuel;  
                     break;
                 }
 
-                else if(countFuel > 0)
+                else if (countFuel > 0)
                 {
                     countFuel--;
                     countDistance -= 10;
                     
-                    if(countDistance <= 0)
+                    if (countDistance <= 0)
                     {
-                        Console.WriteLine($"Siz {distance}km masofani bosib utdingiz.Sizda {countFuel}% yoqilg'i qoldi.");
+                        FuelLevel = countFuel;  
+                        Console.WriteLine($"Siz {distance}km masofani bosib o'tdingiz. Sizda {countFuel}% yoqilg'i qoldi.");
                         break;
                     }
                 }
+            }
+            
+            
+            if (countDistance > 0 && countFuel <= 0)
+            {
+                FuelLevel = countFuel;
+                Console.WriteLine($"Not enough fuel. Qolgan masofa: {countDistance}km");
             }
         }
 
@@ -48,8 +57,12 @@ namespace Model
             if(sumFuel > 100)
             {
                 sumFuel = 100;
+                Console.WriteLine($"Yoqilgi quyildi. Hozirgi holat: 100%");
             }
-            Console.WriteLine($"Yoqilgi quyildi. Hozirgi holat: {sumFuel}%");
+            else
+            {
+                Console.WriteLine($"Yoqilgi quyildi. Hozirgi holat: {sumFuel}%");
+            }
         }
     }
 
