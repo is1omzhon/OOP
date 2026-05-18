@@ -25,3 +25,6 @@ Ushbu loyiha quyidagi mavzularni o‘z ichiga oladi:
 | `Refuel(amount)` | Yoqilg‘i quyadi (100% dan oshmaydi) |
 
 ![Programma ishlashi](/images/1.gif)
+
+#### Oxirgi versiyasi
+![Programma ishlashi](/images/2.gif)
